@@ -1,0 +1,5 @@
+Style/FrozenStringLiteralComment:
+  Enabled: true
+
+Style/Documentation:
+  Enabled: false
