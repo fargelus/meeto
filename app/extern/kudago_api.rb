@@ -5,6 +5,8 @@ class KudagoAPI
   HOST = 'https://kudago.com'
   API_PREFIX = 'public-api'
   API_VERSION = 'v1.4'
+  PAGE_SIZE = 10
+  EXPAND_FIELDS = %w[images places location dates].freeze
 
   attr_reader :conn
 
@@ -15,11 +17,31 @@ class KudagoAPI
     )
   end
 
-  def request(verb, path)
-    conn.send(verb, "#{API_PREFIX}/#{API_VERSION}/#{path}")
+  def fetch_events
+    fields = %w[title description place location dates images]
+    url = build_url('events', fields)
+    response = get(url).body
+    JSON.parse(response)['results']
   end
 
-  def fetch_events
-    request(:get, "events?location=#{DEFAULT_LOCATION}").body
+  private
+
+  def build_url(path, fields)
+    expand = fields - EXPAND_FIELDS
+    url = <<~URL.squish
+      #{API_PREFIX}/#{API_VERSION}/#{path}/
+      ?location=#{DEFAULT_LOCATION}
+      &expand=#{expand.join(',')}
+      &fields=#{fields.join(',')}
+      &page=#{PAGE_SIZE}
+      &actual_since=#{1.month.ago.to_i}
+      &actual_till=#{1.month.since.to_i}
+    URL
+
+    url.gsub(/\s+/, '')
+  end
+
+  def get(url)
+    conn.send(:get, url)
   end
 end
