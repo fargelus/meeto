@@ -69,3 +69,5 @@ end
 gem 'rubocop', '~> 1.35'
 
 gem "faraday", "~> 2.5"
+
+gem 'bootstrap', '~> 5.1.3'
