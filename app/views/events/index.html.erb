@@ -1,21 +1,18 @@
-<h1>Events</h1>
+<h1>События</h1>
 
-<% @events.each_with_index do |ev, i| %>
-  <% if i % 4 == 0 %>
-    <div class="row mb-5">
-  <% end %>
+<div class="row">
+  <% @events.each do |ev| %>
+    <div class="col d-flex flex-column">
+      <h4><%= ev['title'] %></h4>
 
-  <div class="col-3">
-    <h4><%= ev['title'] %></h4>
-    <p><%= sanitize ev['description'] %></p>
+      <% unless ev['images'].blank? %>
+        <% src = ev['images'].last['image'] %>
+        <div>
+          <%= image_tag src, size: '300' %>
+        </div>
+      <% end %>
 
-    <% unless ev['images'].blank? %>
-      <% src = ev['images'].last['image'] %>
-      <%= image_tag src, size: '300' %>
-    <% end %>
-  </div>
-
-  <% if i % 4 == 3 %>
+      <p><%= sanitize ev['description'] %></p>
     </div>
   <% end %>
-<% end %>
+</div>

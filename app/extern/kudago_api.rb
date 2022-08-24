@@ -5,7 +5,7 @@ class KudagoAPI
   HOST = 'https://kudago.com'
   API_PREFIX = 'public-api'
   API_VERSION = 'v1.4'
-  PAGE_SIZE = 10
+  PAGE_SIZE = 12
   EXPAND_FIELDS = %w[images places location dates].freeze
 
   attr_reader :conn
@@ -33,7 +33,7 @@ class KudagoAPI
       ?location=#{DEFAULT_LOCATION}
       &expand=#{expand.join(',')}
       &fields=#{fields.join(',')}
-      &page=#{PAGE_SIZE}
+      &page_size=#{PAGE_SIZE}
       &actual_since=#{1.month.ago.to_i}
       &actual_till=#{1.month.since.to_i}
     URL
