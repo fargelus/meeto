@@ -19,23 +19,16 @@
 
   <div class="row mb-4">
     <div class="col">
-      <%= m.input :started_at, required: true,
-                  start_year: Date.today.year %>
-    </div>
-
-    <div class="col">
-      <%= m.input :finished_at,
+      <%= m.input :started_at, required: true, as: :datetime,
+                  html5: true,
                   start_year: Date.today.year %>
     </div>
   </div>
 
-  <div class="row mb-5">
+  <div class="row mb-4">
     <div class="col">
-      <%= m.input :longitude, required: true %>
-    </div>
-
-    <div class="col">
-      <%= m.input :latitude, required: true %>
+      <%= m.input :duration, required: true,
+                  input_html: { value: 60, min: 60, max: 1440, step: 5 } %>
     </div>
   </div>
 

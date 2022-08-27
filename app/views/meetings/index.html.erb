@@ -2,8 +2,20 @@
 
 <%= link_to 'Создать встречу', new_meeting_path %>
 
-<div class="row">
+<div class="row mt-5">
   <% @meetings.each do |m| %>
-    
+    <div class="col">
+      <h4><%= m.title %></h4>
+      <p><%= m.description %></p>
+      <address><%= m.address %></address>
+
+      <div>
+        <%= time_tag m.started_at %>
+        &nbsp;-
+        <%= time_tag m.finished_at %>
+      </div>
+
+      <%= link_to t('more_link'), meeting_path(m.id) %>
+    </div>
   <% end %>
 </div>

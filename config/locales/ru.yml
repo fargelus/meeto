@@ -1,16 +1,16 @@
 ru:
+  more_link: Подробнее
   helpers:
     submit:
       meeting:
-        create: 'Создать встречу'
+        create: Создать встречу
 
   simple_form:
     labels:
       defaults:
         started_at: 'Начало:'
-        finished_at: 'Окончание:'
+        duration: 'Продолжительность(мин.):'
       meeting:
         title: 'Название встречи:'
         description: 'Описание:'
         address: 'Адрес:'
-        longitude: 'Долгота:'

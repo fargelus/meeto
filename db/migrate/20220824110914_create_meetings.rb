@@ -5,9 +5,8 @@ class CreateMeetings < ActiveRecord::Migration[7.0]
       t.text :description, null: false
       t.string :address, null: false
       t.datetime :started_at, null: false
-      t.datetime :finished_at
-      t.decimal :longitude, null: false
-      t.decimal :latitude, null: false
+      t.integer :duration, null: false
+      t.datetime :finished_at, null: false
 
       t.timestamps
     end

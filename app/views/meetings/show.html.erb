@@ -1,0 +1,9 @@
+<h1><%= @meeting.title %></h1>
+<p><%= @meeting.description %></p>
+<address><%= @meeting.address %></address>
+
+<div>
+  <%= time_tag @meeting.started_at %>
+  &nbsp;-
+  <%= time_tag @meeting.finished_at %>
+</div>

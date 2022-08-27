@@ -75,6 +75,7 @@ Rails.application.configure do
   config.i18n.fallbacks = true
 
   config.i18n.default_locale = :ru
+  config.i18n.available_locales = %i[ru en]
 
   # Don't log any deprecations.
   config.active_support.report_deprecations = false
