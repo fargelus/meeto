@@ -6,8 +6,19 @@
   <% @meetings.each do |m| %>
     <div class="col">
       <h4><%= m.title %></h4>
+
+      <% if m.preview_image.attached? %>
+        <div class="mt-4 mb-4">
+          <%= image_tag m.preview_image, size: 300 %>
+        </div>
+      <% end %>
+
       <p><%= m.description %></p>
-      <address><%= m.address %></address>
+      <address>
+        <b>
+          <%= m.address %>
+        </b>
+      </address>
 
       <div>
         <%= time_tag m.started_at %>
@@ -15,7 +26,10 @@
         <%= time_tag m.finished_at %>
       </div>
 
-      <%= link_to t('more_link'), meeting_path(m.id) %>
+      <div>
+        <%= link_to t('to_edit'), edit_meeting_path(m.id) %>
+        <%= link_to t('more_link'), meeting_path(m.id) %>
+      </div>
     </div>
   <% end %>
 </div>

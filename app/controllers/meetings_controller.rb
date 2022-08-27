@@ -1,10 +1,10 @@
 # frozen_string_literal: true
 
 class MeetingsController < ApplicationController
-  before_action :set_meeting, only: :show
+  before_action :set_meeting, only: %i[show edit update]
 
   def index
-    @meetings = Meeting.all
+    @meetings = Meeting.order(:id)
   end
 
   def new
@@ -22,10 +22,25 @@ class MeetingsController < ApplicationController
 
   def show; end
 
+  def edit; end
+
+  def update
+    if @meeting.update(meeting_params)
+      @meeting.preview_image.attach(image_from_params)
+      redirect_to meetings_path
+    else
+      render 'edit'
+    end
+  end
+
   private
 
   def set_meeting
     @meeting = Meeting.find(params[:id])
+  end
+
+  def image_from_params
+    params[:meeting][:preview_image]
   end
 
   def meeting_params

@@ -1,10 +1,10 @@
-<h1> Создать встречу </h1>
+<h1><%= t('to_edit') %></h1>
 
-<%= simple_form_for @meeting, url: meetings_path, wrapper: :horizontal_form,
-    wrapper_mappings: {
-      datetime:      :horizontal_multi_select,
-      range:         :horizontal_range
-    } do |m| %>
+<%= simple_form_for @meeting, url: meeting_path(@meeting.id), wrapper: :horizontal_form,
+                    wrapper_mappings: {
+                      datetime:      :horizontal_multi_select,
+                      range:         :horizontal_range
+                    } do |m| %>
   <div class="row mb-4">
     <%= m.input :title, class: 'mb-4', required: true %>
   </div>

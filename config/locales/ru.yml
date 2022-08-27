@@ -1,5 +1,6 @@
 ru:
   more_link: Подробнее
+  to_edit: Изменить
   helpers:
     submit:
       meeting:
@@ -14,3 +15,4 @@ ru:
         title: 'Название встречи:'
         description: 'Описание:'
         address: 'Адрес:'
+        preview_image: 'Картинка превью:'

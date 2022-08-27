@@ -1,6 +1,15 @@
 <h1><%= @meeting.title %></h1>
+
+<% if @meeting.preview_image.attached? %>
+  <div class="mt-4 mb-4">
+    <%= image_tag @meeting.preview_image, style: 'max-width: 100%' %>
+  </div>
+<% end %>
+
 <p><%= @meeting.description %></p>
-<address><%= @meeting.address %></address>
+<address>
+  <b><%= @meeting.address %></b>
+</address>
 
 <div>
   <%= time_tag @meeting.started_at %>
