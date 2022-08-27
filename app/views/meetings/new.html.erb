@@ -1,0 +1,43 @@
+<h1> Создать встречу </h1>
+
+<%= simple_form_for @meeting, url: meetings_path, wrapper: :horizontal_form,
+    wrapper_mappings: {
+      datetime:      :horizontal_multi_select,
+      range:         :horizontal_range
+    } do |m| %>
+  <div class="row mb-4">
+    <%= m.input :title, class: 'mb-4', required: true %>
+  </div>
+
+  <div class="row mb-4">
+    <%= m.input :description, required: true %>
+  </div>
+
+  <div class="row mb-4">
+    <%= m.input :address, required: true %>
+  </div>
+
+  <div class="row mb-4">
+    <div class="col">
+      <%= m.input :started_at, required: true,
+                  start_year: Date.today.year %>
+    </div>
+
+    <div class="col">
+      <%= m.input :finished_at,
+                  start_year: Date.today.year %>
+    </div>
+  </div>
+
+  <div class="row mb-5">
+    <div class="col">
+      <%= m.input :longitude, required: true %>
+    </div>
+
+    <div class="col">
+      <%= m.input :latitude, required: true %>
+    </div>
+  </div>
+
+  <%= m.button :submit, class: 'btn-primary' %>
+<% end %>

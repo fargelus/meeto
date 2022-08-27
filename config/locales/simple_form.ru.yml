@@ -1,0 +1,4 @@
+ru:
+  simple_form:
+    labels:
+      meeting_title: 'Название встречи'
