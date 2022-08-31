@@ -28,7 +28,10 @@
 
       <div>
         <%= link_to t('to_edit'), edit_meeting_path(m.id) %>
-        <%= link_to t('more_link'), meeting_path(m.id) %>
+        <%= link_to t('more_link'), meeting_path(m.id), class: 'link-dark' %>
+        <%= link_to t('to_delete'), meeting_path(m.id),
+                    data: {:confirm => t('sure?')},
+                    method: :delete, class: 'link-danger' %>
       </div>
     </div>
   <% end %>

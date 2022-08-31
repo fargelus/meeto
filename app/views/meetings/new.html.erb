@@ -23,9 +23,9 @@
 
   <div class="row mb-4">
     <div class="col">
-      <%= m.input :started_at, required: true, as: :datetime,
-                  html5: true,
-                  start_year: Date.today.year %>
+      <%= m.input :started_at, required: true,
+                  input_html: { class: 'datetimerange' },
+                  as: :string, start_year: Date.today.year %>
     </div>
   </div>
 

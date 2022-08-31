@@ -23,8 +23,8 @@
 
   <div class="row mb-4">
     <div class="col">
-      <%= m.input :started_at, required: true, as: :datetime,
-                  html5: true,
+      <%= m.input :started_at, required: true, as: :string,
+                  input_html: { class: 'datetimerange' },
                   start_year: Date.today.year %>
     </div>
   </div>

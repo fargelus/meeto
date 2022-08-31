@@ -1,6 +1,8 @@
 ru:
   more_link: Подробнее
   to_edit: Изменить
+  to_delete: Удалить
+  sure?: Вы уверены?
   helpers:
     submit:
       meeting:
