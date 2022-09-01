@@ -24,15 +24,17 @@
   <div class="row mb-4">
     <div class="col">
       <%= m.input :started_at, required: true, as: :string,
-                  input_html: { class: 'datetimerange' },
+                  input_html: {
+                    class: 'datetimerange',
+                    value: @meeting.started_at.strftime('%d/%m/%Y %H:%M')
+                  },
                   start_year: Date.today.year %>
     </div>
   </div>
 
   <div class="row mb-4">
     <div class="col">
-      <%= m.input :duration, required: true,
-                  input_html: { value: 60, min: 60, max: 1440, step: 5 } %>
+      <%= m.input :duration, required: true, input_html: { min: 60, max: 1440, step: 5 } %>
     </div>
   </div>
 

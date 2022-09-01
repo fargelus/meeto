@@ -10,9 +10,8 @@ $(() => {
         timePicker: true,
         timePicker24Hour: true,
         showDropdowns: true,
-        minDate: moment().format('DD/MM/YYYY'),
         locale: {
-            "format": "DD/MM/YYYY",
+            "format": "DD/MM/YYYY HH:mm",
             "applyLabel": "Применить",
             "cancelLabel": "Отмена",
             "daysOfWeek": [

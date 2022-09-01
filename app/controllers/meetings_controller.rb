@@ -26,7 +26,7 @@ class MeetingsController < ApplicationController
 
   def update
     if @meeting.update(meeting_params)
-      @meeting.preview_image.attach(image_from_params)
+      @meeting.preview_image.attach(image_from_params) if image_from_params
       redirect_to meetings_path
     else
       render 'edit'
