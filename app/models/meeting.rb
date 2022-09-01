@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class Meeting < ApplicationRecord
-  before_save :set_finished_at, if: :will_save_change_to_duration?
+  before_save :set_finished_at
 
   has_one_attached :preview_image
 
