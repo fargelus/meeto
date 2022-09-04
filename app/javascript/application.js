@@ -4,5 +4,6 @@ import "controllers"
 import 'bootstrap'
 import Rails from '@rails/ujs'
 import 'libs/daterangepicker'
+import 'libs/suggestions'
 
 Rails.start()

@@ -3,6 +3,8 @@ ru:
   to_edit: Изменить
   to_delete: Удалить
   sure?: Вы уверены?
+  create_meeting: Создать встречу
+  meetings: Встречи
   helpers:
     submit:
       meeting:

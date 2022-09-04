@@ -14,3 +14,4 @@ pin "@rails/ujs", to: "https://ga.jspm.io/npm:@rails/ujs@7.0.3-1/lib/assets/comp
 pin "daterangepicker", to: "https://ga.jspm.io/npm:daterangepicker@3.1.0/daterangepicker.js"
 pin "jquery", to: "https://ga.jspm.io/npm:jquery@3.6.0/dist/jquery.js"
 pin "moment", to: "https://ga.jspm.io/npm:moment@2.29.4/moment.js"
+pin "suggestions-jquery", to: "https://ga.jspm.io/npm:suggestions-jquery@22.6.0/dist/js/jquery.suggestions.js"

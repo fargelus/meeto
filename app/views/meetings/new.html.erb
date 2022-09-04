@@ -1,4 +1,4 @@
-<h1> Создать встречу </h1>
+<h1><%= t('create_meeting') %></h1>
 
 <%= simple_form_for @meeting, url: meetings_path, wrapper: :horizontal_form,
     wrapper_mappings: {
@@ -18,7 +18,7 @@
   </div>
 
   <div class="row mb-4">
-    <%= m.input :address, required: true %>
+    <%= m.input :address, required: true, input_html: { class: 'js-address' } %>
   </div>
 
   <div class="row mb-4">
