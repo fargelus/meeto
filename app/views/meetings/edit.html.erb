@@ -18,7 +18,9 @@
   </div>
 
   <div class="row mb-4">
-    <%= m.input :address, required: true, input_html: { class: 'js-address' } %>
+    <%= m.input :latitude, as: :hidden, input_html: { id: 'addr-lat' }  %>
+    <%= m.input :longitude, as: :hidden, input_html: { id: 'addr-long' }  %>
+    <%= m.input :address, required: true, input_html: { id: 'addr-suggestions' } %>
   </div>
 
   <div class="row mb-4">

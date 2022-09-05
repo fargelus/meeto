@@ -9,6 +9,7 @@ ru:
     submit:
       meeting:
         create: Создать встречу
+        update: Изменить встречу
 
   simple_form:
     labels:
