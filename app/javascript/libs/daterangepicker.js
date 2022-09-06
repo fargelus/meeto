@@ -1,8 +1,8 @@
-import 'daterangepicker'
-import moment from 'moment'
-import jquery from 'jquery'
+import 'daterangepicker';
+import moment from 'moment';
+import jquery from 'jquery';
 
-window.$ = jquery
+window.$ = jquery;
 
 $(() => {
     $('.datetimerange').daterangepicker({
@@ -39,5 +39,5 @@ $(() => {
             ],
         },
         maxYear: parseInt(moment().format('YYYY'),10) + 1
-    })
-})
+    });
+});

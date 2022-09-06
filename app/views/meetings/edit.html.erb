@@ -14,7 +14,13 @@
   </div>
 
   <div class="row mb-4">
-    <%= m.input :preview_image, class: 'mb-4' %>
+    <%= m.input :preview_image, wrapper_html: { class: 'col-3' } %>
+
+    <div class="col-9">
+      <% if @meeting.preview_image.attached? %>
+        <%= image_tag @meeting.preview_image, size: 50  %>
+      <% end %>
+    </div>
   </div>
 
   <div class="row mb-4">

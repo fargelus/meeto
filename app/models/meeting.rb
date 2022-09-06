@@ -5,6 +5,9 @@ class Meeting < ApplicationRecord
 
   has_one_attached :preview_image
 
+  validates :title, :description, :address, :started_at, :duration,
+            presence: true
+
   def set_finished_at
     self.finished_at = started_at + duration.minutes
   end
