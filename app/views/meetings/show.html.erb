@@ -7,6 +7,10 @@
 <% end %>
 
 <p><%= @meeting.description %></p>
+<% if @meeting.participants_limit %>
+  <%= content_tag :div, "#{t('participants_amount')}: #{@meeting.participants_limit}", class: 'mb-3' %>
+<% end %>
+
 <address>
   <b class="ymaps-geolink"><%= @meeting.address %></b>
 </address>

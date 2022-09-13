@@ -5,6 +5,7 @@ ru:
   sure?: Вы уверены?
   create_meeting: Создать встречу
   meetings: Встречи
+  participants_amount: Кол-во участников
   helpers:
     submit:
       meeting:
@@ -21,3 +22,4 @@ ru:
         description: 'Описание:'
         address: 'Адрес:'
         preview_image: 'Картинка превью:'
+        participants_limit: 'Ограничить кол-во участников:'
