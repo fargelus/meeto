@@ -1,0 +1,17 @@
+<h1><%= t('authorize') %></h1>
+
+<%= form_with url: authorize_path do |f| %>
+  <div class="row">
+    <div class="col">
+      <%= f.text_field 'account[email]', class: 'form-control', placeholder: 'Email' %>
+    </div>
+
+    <div class="col">
+      <%= f.password_field 'account[password]', class: 'form-control', placeholder: t('auth.passwd') %>
+    </div>
+  </div>
+
+  <%= f.submit t('auth.login'), class: 'btn btn-primary mt-3' %>
+<% end %>
+
+<%= render partial: 'partials/notice', locals: { text: flash.notice, category: 'alert-danger' } %>

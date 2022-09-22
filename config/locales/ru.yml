@@ -6,11 +6,20 @@ ru:
   create_meeting: Создать встречу
   meetings: Встречи
   participants_amount: Кол-во участников
+  authorize: Авторизация
+  account_not_exist: Такой аккаунт не существует
+  should_login_first: Необходима авторизация
+  auth:
+    login: Войти
+    register: Регистрация
+    passwd: Пароль
   helpers:
     submit:
       meeting:
         create: Создать встречу
         update: Изменить встречу
+      account:
+        create: Создать аккаунт
 
   simple_form:
     labels:
@@ -23,3 +32,6 @@ ru:
         address: 'Адрес:'
         preview_image: 'Картинка превью:'
         participants_limit: 'Ограничить кол-во участников:'
+      account:
+        password: Пароль
+        password_confirmation: Подтверждение пароля

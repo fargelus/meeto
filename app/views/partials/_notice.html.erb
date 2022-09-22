@@ -1,0 +1,6 @@
+<% unless text.to_s.empty? %>
+  <% category ||= 'alert-primary' %>
+  <div class="<%="alert notice #{category}"%>" role="alert">
+    <%=text%>
+  </div>
+<% end %>
