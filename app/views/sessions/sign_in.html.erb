@@ -2,16 +2,18 @@
 
 <%= form_with url: authorize_path do |f| %>
   <div class="row">
-    <div class="col">
+    <div class="col-12">
       <%= f.text_field 'account[email]', class: 'form-control', placeholder: 'Email' %>
     </div>
 
-    <div class="col">
+    <div class="col-12 mt-3">
       <%= f.password_field 'account[password]', class: 'form-control', placeholder: t('auth.passwd') %>
     </div>
-  </div>
 
-  <%= f.submit t('auth.login'), class: 'btn btn-primary mt-3' %>
+    <div>
+      <%= f.submit t('auth.login'), class: 'btn btn-primary mt-3' %>
+    </div>
+  </div>
 <% end %>
 
 <%= render partial: 'partials/notice', locals: { text: flash.notice, category: 'alert-danger' } %>

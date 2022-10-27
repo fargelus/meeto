@@ -17,3 +17,5 @@
 
   <%= a.button :submit, class: 'btn-primary' %>
 <% end %>
+
+<%= render partial: 'partials/notice', locals: { text: flash.notice, category: 'alert-danger' } %>

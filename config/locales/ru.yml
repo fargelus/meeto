@@ -8,11 +8,13 @@ ru:
   participants_amount: Кол-во участников
   authorize: Авторизация
   account_not_exist: Такой аккаунт не существует
+  account_not_created: Не удалось создать аккаунт
   should_login_first: Необходима авторизация
   auth:
     login: Войти
     register: Регистрация
     passwd: Пароль
+    logout: Выйти
   helpers:
     submit:
       meeting:
