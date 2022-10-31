@@ -6,6 +6,6 @@ class ApplicationController < ActionController::Base
   private
 
   def not_authenticated
-    redirect_to sign_in_path, notice: t("should_login_first")
+    redirect_to welcome_path
   end
 end

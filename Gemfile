@@ -62,3 +62,6 @@ gem "sorcery"
 
 # 🌟 Ruby Style Guide, with linter & automatic code fixer
 gem "standard", "~> 1.9.0"
+
+# Web fonts and stylesheets
+gem "font-awesome-rails"
