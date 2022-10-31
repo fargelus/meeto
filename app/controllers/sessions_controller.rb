@@ -9,24 +9,26 @@ class SessionsController < ApplicationController
 
   def register
     account = Account.new(*account_params)
-    return redirect_to sign_up_path, notice: t('account_not_created') unless account.valid?
+    return redirect_to sign_up_path, notice: t("account_not_created") unless account.valid?
 
     account.save
     auto_login(account)
     redirect_to meetings_path
   end
 
-  def sign_in; end
+  def sign_in
+  end
 
   def authorize
     email = account_params[:email]
     password = account_params[:password]
     return redirect_to meetings_path if login(email, password)
 
-    redirect_to sign_in_path, notice: t('account_not_exist')
+    redirect_to sign_in_path, notice: t("account_not_exist")
   end
 
-  def welcome; end
+  def welcome
+  end
 
   def destroy
     logout

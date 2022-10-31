@@ -16,20 +16,22 @@ class MeetingsController < ApplicationController
     if @meeting.save
       redirect_to meetings_path
     else
-      render 'new'
+      render "new"
     end
   end
 
-  def show; end
+  def show
+  end
 
-  def edit; end
+  def edit
+  end
 
   def update
     if @meeting.update(meeting_params)
       @meeting.preview_image.attach(image_from_params) if image_from_params
       redirect_to meetings_path
     else
-      render 'edit'
+      render "edit"
     end
   end
 
@@ -50,6 +52,6 @@ class MeetingsController < ApplicationController
 
   def meeting_params
     params.require(:meeting).permit(:title, :description, :address, :started_at,
-                                    :duration, :latitude, :longitude, :participants_limit)
+      :duration, :latitude, :longitude, :participants_limit)
   end
 end
