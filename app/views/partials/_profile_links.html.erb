@@ -1,4 +1,11 @@
-<%= link_to logout_path, class: 'link-dark float-end' do %>
-  <%= content_tag :span, t('auth.logout')  %>
-  <%= fa_icon "sign-out" %>
+<%= content_tag :div, class: "float-end" do %>
+  <%= content_tag :span, class: "me-3" do %>
+    <%= link_to t("profile"), edit_user_path(current_user.id), class: "link-dark" %>
+    <%= fa_icon "user" %>
+  <% end %>
+
+  <%= content_tag :span do %>
+    <%= link_to t("auth.logout"), logout_path, class: "link-dark" %>
+    <%= fa_icon "sign-out" %>
+  <% end %>
 <% end %>

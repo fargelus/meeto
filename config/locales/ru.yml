@@ -10,6 +10,7 @@ ru:
   user_not_exist: Пользователь не существует
   user_not_created: Пользователь не зарегистрирован
   should_login_first: Необходима авторизация
+  profile: Профиль
   auth:
     login: Войти
     register: Регистрация
