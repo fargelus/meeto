@@ -4,15 +4,15 @@ class SessionsController < ApplicationController
   skip_before_action :require_login
 
   def new
-    @account = Account.new
+    @user = User.new
   end
 
   def register
-    account = Account.new(*account_params)
-    return redirect_to sign_up_path, notice: t("account_not_created") unless account.valid?
+    user = User.new(*user_params)
+    return redirect_to sign_up_path, notice: t("user_not_created") unless user.valid?
 
-    account.save
-    auto_login(account)
+    user.save
+    auto_login(user)
     redirect_to meetings_path
   end
 
@@ -20,11 +20,11 @@ class SessionsController < ApplicationController
   end
 
   def authorize
-    email = account_params[:email]
-    password = account_params[:password]
+    email = user_params[:email]
+    password = user_params[:password]
     return redirect_to meetings_path if login(email, password)
 
-    redirect_to sign_in_path, notice: t("account_not_exist")
+    redirect_to sign_in_path, notice: t("user_not_exist")
   end
 
   def welcome
@@ -37,8 +37,8 @@ class SessionsController < ApplicationController
 
   private
 
-  def account_params
-    params.require(:account).permit(
+  def user_params
+    params.require(:user).permit(
       :email,
       :password,
       :password_confirmation

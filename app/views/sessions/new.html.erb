@@ -1,21 +1,21 @@
 <h1><%= t('auth.register') %></h1>
 
-<%= simple_form_for @account, url: register_path do |a| %>
+<%= simple_form_for @user, url: register_path do |u| %>
   <div class="row mb-4">
-    <%= a.input :email %>
+    <%= u.input :email %>
   </div>
 
   <div class="row mb-4">
     <div class="col">
-      <%= a.input :password %>
+      <%= u.input :password %>
     </div>
 
     <div class="col">
-      <%= a.input :password_confirmation %>
+      <%= u.input :password_confirmation %>
     </div>
   </div>
 
-  <%= a.button :submit, class: 'btn-primary' %>
+  <%= u.button :submit, class: 'btn-primary' %>
 <% end %>
 
 <%= render partial: 'partials/notice', locals: { text: flash.notice, category: 'alert-danger' } %>

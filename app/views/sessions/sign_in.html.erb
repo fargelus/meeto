@@ -3,11 +3,11 @@
 <%= form_with url: authorize_path do |f| %>
   <div class="row">
     <div class="col-12">
-      <%= f.text_field 'account[email]', class: 'form-control', placeholder: 'Email' %>
+      <%= f.text_field 'user[email]', class: 'form-control', placeholder: 'Email' %>
     </div>
 
     <div class="col-12 mt-3">
-      <%= f.password_field 'account[password]', class: 'form-control', placeholder: t('auth.passwd') %>
+      <%= f.password_field 'user[password]', class: 'form-control', placeholder: t('auth.passwd') %>
     </div>
 
     <div>
